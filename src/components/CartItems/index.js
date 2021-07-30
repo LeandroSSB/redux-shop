@@ -5,13 +5,15 @@ import { removeCartThunk } from '../../store/modules/cart/thunks'
 
     const CartItems = () => {
         const {items} = useSelector((state) => state.cart)
+        const bat = useSelector((state) => state.cart)
+        console.log(bat)
         const dispatch = useDispatch()
 
 
         const handleClick = (a) => {
             dispatch(removeCartThunk(a))
         }
-        console.log(items)
+        
         return (
             <div>
         <Grid container justifyContent = "center" spacing = {1}   alignItems="center">

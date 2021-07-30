@@ -11,7 +11,7 @@ export const addCartThunk = (comment) => (dispatch, getState) =>{
 export const removeCartThunk = (comment) => (dispatch, getState) => {
     const  {cart} = getState((state) => state.cart)
     const {items} = cart
-    const updatedUser = items.filter((a) => a !== comment)
+    const updatedUser = {...cart, count: cart.count - 1 , items: items.filter((a) => a !== comment)}
     dispatch(removeCart(updatedUser))
 }
 
